@@ -7,7 +7,7 @@ const icons = [Clock, Award, ShieldCheck, Users, Briefcase, Settings];
 
 const WhyUs = () => {
   const { t } = useLang();
-  const [hovered, setHovered] = useState<number>(2);
+  const [hovered, setHovered] = useState<number | null>(null);
 
   return (
     <section id="about" className="py-24 bg-background">
@@ -33,7 +33,7 @@ const WhyUs = () => {
               <motion.div
                 key={p.title}
                 onMouseEnter={() => setHovered(i)}
-                onMouseLeave={() => setHovered(2)}
+                onMouseLeave={() => setHovered(null)}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
