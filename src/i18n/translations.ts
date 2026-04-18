@@ -27,11 +27,13 @@ export const translations = {
     ],
     services: {
       kicker: "خدماتنا",
-      title: "خدمات متكاملة بمعايير عالمية",
+      title: "حلول متكاملة للمقاولات بمعايير عالية",
       items: [
-        { title: "المقاولات العامة", desc: "تنفيذ كافة أعمال المقاولات العامة من الأساسات حتى التسليم بأعلى جودة ومعايير السلامة." },
-        { title: "المشاريع الحكومية", desc: "خبرة واسعة في تنفيذ المشاريع الحكومية وفق المواصفات والمعايير المعتمدة." },
-        { title: "التشطيب وإدارة المشاريع", desc: "تشطيبات راقية وإدارة احترافية للمشاريع تضمن الجودة والالتزام بالجدول الزمني." },
+        { title: "المقاولات العامة", desc: "تنفيذ جميع أعمال المقاولات وفق أعلى المعايير" },
+        { title: "المشاريع الحكومية", desc: "خبرة في تنفيذ مشاريع الجهات الحكومية" },
+        { title: "المشاريع التجارية", desc: "تنفيذ المشاريع التجارية والمراكز الإدارية" },
+        { title: "أعمال التشطيب", desc: "تشطيبات داخلية وخارجية بجودة عالية" },
+        { title: "إدارة المشاريع", desc: "إدارة شاملة من التخطيط حتى التسليم" },
       ],
     },
     projects: {
@@ -45,12 +47,14 @@ export const translations = {
     },
     why: {
       kicker: "لماذا نحن",
-      title: "ما يميّز جيل التميز الحديثة",
+      title: "لماذا نحن؟",
       items: [
-        { title: "التزام صارم بالمواعيد", desc: "نحترم الجدول الزمني ونسلم في الموعد المتفق عليه." },
-        { title: "جودة تنفيذ عالية", desc: "معايير جودة عالمية في كل تفاصيل التنفيذ." },
-        { title: "خبرة في المشاريع الحكومية", desc: "سجل حافل بالمشاريع الحكومية الناجحة." },
-        { title: "فريق هندسي متخصص", desc: "كوادر هندسية مؤهلة بأعلى الكفاءات." },
+        { title: "التزام", desc: "التزام صارم بالمواعيد" },
+        { title: "جودة", desc: "جودة تنفيذ عالية" },
+        { title: "موثوقية", desc: "شفافية وثقة مع العملاء" },
+        { title: "فريق متخصص", desc: "فريق هندسي مؤهل" },
+        { title: "خبرة", desc: "خبرة في المشاريع الحكومية" },
+        { title: "كفاءة", desc: "إدارة مشاريع بكفاءة عالية" },
       ],
     },
     journey: {
@@ -136,11 +140,13 @@ export const translations = {
     ],
     services: {
       kicker: "Our Services",
-      title: "Integrated services with global standards",
+      title: "Integrated contracting solutions with high standards",
       items: [
-        { title: "General Contracting", desc: "Executing all general contracting work from foundations to delivery with top quality and safety standards." },
-        { title: "Government Projects", desc: "Wide experience executing government projects per approved specifications and standards." },
-        { title: "Finishing & Project Management", desc: "Premium finishes and professional management ensuring quality and timely delivery." },
+        { title: "General Contracting", desc: "Executing all contracting works to the highest standards" },
+        { title: "Government Projects", desc: "Experience in executing government entity projects" },
+        { title: "Commercial Projects", desc: "Executing commercial projects and administrative centers" },
+        { title: "Finishing Works", desc: "Interior and exterior finishes with high quality" },
+        { title: "Project Management", desc: "Comprehensive management from planning to delivery" },
       ],
     },
     projects: {
@@ -154,12 +160,14 @@ export const translations = {
     },
     why: {
       kicker: "Why Us",
-      title: "What sets Modern Excellence apart",
+      title: "Why Us?",
       items: [
-        { title: "Strict Timeline Commitment", desc: "We respect schedules and deliver on agreed dates." },
-        { title: "High Execution Quality", desc: "Global quality standards in every execution detail." },
-        { title: "Government Project Expertise", desc: "Strong record of successful government projects." },
-        { title: "Specialized Engineering Team", desc: "Qualified engineering staff with top competencies." },
+        { title: "Commitment", desc: "Strict commitment to deadlines" },
+        { title: "Quality", desc: "High execution quality" },
+        { title: "Reliability", desc: "Transparency and trust with clients" },
+        { title: "Specialized Team", desc: "Qualified engineering team" },
+        { title: "Experience", desc: "Experience in government projects" },
+        { title: "Efficiency", desc: "High-efficiency project management" },
       ],
     },
     journey: {
