@@ -95,19 +95,24 @@
     @apply border-border;
   }
 
-  html {
-    direction: rtl;
-  }
-
   body {
     @apply bg-background text-foreground;
     font-family: 'Tajawal', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
 
+  html[lang="en"] body {
+    font-family: 'Inter', 'Tajawal', system-ui, sans-serif;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Cairo', 'Tajawal', sans-serif;
     @apply tracking-tight;
+  }
+
+  html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3,
+  html[lang="en"] h4, html[lang="en"] h5, html[lang="en"] h6 {
+    font-family: 'Inter', 'Cairo', sans-serif;
   }
 }
 
