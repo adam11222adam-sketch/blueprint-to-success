@@ -3,69 +3,66 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, Phone } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
-import heroImg from "@/assets/hero-side.jpg";
+import heroSide from "@/assets/hero-side.jpg";
 
 const Hero = () => {
   const { t, lang, dir } = useLang();
   const Arrow = dir === "rtl" ? ArrowLeft : ArrowRight;
 
   return (
-    <section id="home" className="relative min-h-[88vh] flex items-center overflow-hidden bg-primary">
-      {/* Background image */}
-      <motion.img
-        initial={{ scale: 1.1 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 2.2, ease: "easeOut" }}
-        src={heroImg}
-        alt={lang === "ar" ? "موقع بناء — رافعة ومبنى قيد الإنشاء" : "Construction site with crane"}
-        className="absolute inset-0 w-full h-full object-cover"
-        width={1920}
-        height={1080}
-      />
-
-      {/* Dark navy overlay — stronger on the right (text side) */}
-      <div className="absolute inset-0 bg-primary/75" />
+    <section id="home" className="relative bg-gradient-navy overflow-hidden">
+      {/* Gold grid pattern background */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 opacity-[0.08] pointer-events-none"
         style={{
-          background:
-            dir === "rtl"
-              ? "linear-gradient(270deg, hsl(var(--primary) / 0.95) 0%, hsl(var(--primary) / 0.7) 45%, hsl(var(--primary) / 0.35) 100%)"
-              : "linear-gradient(90deg, hsl(var(--primary) / 0.95) 0%, hsl(var(--primary) / 0.7) 45%, hsl(var(--primary) / 0.35) 100%)",
+          backgroundImage:
+            "linear-gradient(hsl(var(--gold)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--gold)) 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
         }}
       />
-
-      {/* Geometric gold lines on the text side */}
-      <div className="absolute inset-y-0 end-0 w-1/2 pointer-events-none opacity-30 hidden md:block">
+      {/* Diagonal gold accents */}
+      <div className="absolute inset-0 pointer-events-none opacity-20">
         <motion.div
-          initial={{ opacity: 0, x: 60 }}
+          initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1.4, delay: 0.4 }}
-          className="absolute inset-0"
-        >
-          <div className="absolute top-10 end-10 w-72 h-72 border-2 border-gold rotate-12" />
-          <div className="absolute top-32 end-24 w-56 h-56 border-2 border-gold/60 -rotate-6" />
-          <div className="absolute bottom-20 end-40 w-40 h-40 border border-gold/40 rotate-45" />
-          <div
-            className="absolute inset-0 opacity-40"
-            style={{
-              backgroundImage:
-                "linear-gradient(hsl(var(--gold)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--gold)) 1px, transparent 1px)",
-              backgroundSize: "80px 80px",
-              maskImage: "linear-gradient(270deg, black, transparent)",
-              WebkitMaskImage: "linear-gradient(270deg, black, transparent)",
-            }}
-          />
-        </motion.div>
+          transition={{ duration: 1.5, delay: 0.4 }}
+          className="absolute top-0 right-0 w-[60%] h-full"
+          style={{
+            background:
+              "linear-gradient(135deg, transparent 40%, hsl(var(--gold) / 0.3) 50%, transparent 60%)",
+          }}
+        />
       </div>
 
-      {/* Content — right aligned */}
-      <div className="container relative z-10 py-20">
+      <div className="container relative z-10 grid lg:grid-cols-2 gap-8 items-center min-h-[80vh] py-16">
+        {/* Image side */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="relative order-2 lg:order-1"
+        >
+          <div className="relative overflow-hidden rounded-sm shadow-2xl">
+            <img
+              src={heroSide}
+              alt={lang === "ar" ? "مشروع إنشائي" : "Construction project"}
+              className="w-full h-[400px] lg:h-[520px] object-cover"
+              width={1280}
+              height={1080}
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/30 via-transparent to-primary/60" />
+          </div>
+          {/* Gold corner accent */}
+          <div className="absolute -top-3 -start-3 w-20 h-20 border-t-4 border-s-4 border-gold" />
+          <div className="absolute -bottom-3 -end-3 w-20 h-20 border-b-4 border-e-4 border-gold" />
+        </motion.div>
+
+        {/* Text side */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-2xl ms-auto text-center lg:text-start"
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="order-1 lg:order-2 text-center lg:text-start"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -76,12 +73,12 @@ const Hero = () => {
             {t.hero.badge}
           </motion.div>
 
-          <h1 className="font-display font-black text-4xl md:text-5xl lg:text-6xl text-white leading-[1.2] mb-6 tracking-wide">
+          <h1 className="font-display font-black text-3xl md:text-5xl lg:text-6xl text-white leading-[1.2] mb-6">
             <motion.span
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.7 }}
-              className="block mb-3"
+              className="block mb-2"
             >
               {t.hero.title1}
             </motion.span>
@@ -89,7 +86,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.7 }}
-              className="block mb-3 text-gradient-gold"
+              className="block mb-2 text-gradient-gold"
             >
               {t.hero.title2}
             </motion.span>
@@ -107,7 +104,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.1, duration: 0.6 }}
-            className="text-base md:text-lg text-white/75 mb-9 max-w-xl mx-auto lg:mx-0 lg:ms-auto leading-relaxed"
+            className="text-base md:text-lg text-white/80 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0"
           >
             {t.hero.desc}
           </motion.p>
@@ -139,18 +136,6 @@ const Hero = () => {
                 {t.hero.cta2}
               </a>
             </Button>
-          </motion.div>
-
-          {/* Slider dots */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.6, duration: 0.6 }}
-            className="flex gap-2 mt-10 justify-center lg:justify-start"
-          >
-            <span className="w-8 h-1.5 rounded-full bg-gold" />
-            <span className="w-2 h-1.5 rounded-full bg-white/40" />
-            <span className="w-2 h-1.5 rounded-full bg-white/40" />
           </motion.div>
         </motion.div>
       </div>
