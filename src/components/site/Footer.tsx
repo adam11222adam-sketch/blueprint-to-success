@@ -8,14 +8,8 @@ const Footer = () => {
     <footer id="contact" className="bg-primary text-primary-foreground pt-16 pb-6">
       <div className="container grid md:grid-cols-4 gap-10 mb-10">
         <div className="md:col-span-2">
-          <div className="flex items-center gap-3 mb-4">
-            <img src={logo} alt="Logo" className="h-12 w-12 object-contain" width={48} height={48} loading="lazy" />
-            <div>
-              <div className="font-display font-bold text-lg">
-                {lang === "ar" ? "جيل التميز الحديثة" : "Modern Excellence Generation"}
-              </div>
-              <div className="text-xs text-white/60">{lang === "ar" ? "للمقاولات" : "Contracting"}</div>
-            </div>
+          <div className="mb-4">
+            <img src={logo} alt="Logo" className="h-28 md:h-32 w-auto object-contain bg-white/95 rounded-md p-2" loading="lazy" />
           </div>
           <p className="text-white/70 leading-relaxed max-w-md">
             {t.footer.tagline}

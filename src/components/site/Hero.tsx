@@ -96,21 +96,25 @@ const Hero = () => {
             <Button
               asChild
               size="lg"
-              className="bg-gold text-gold-foreground hover:bg-gold-light shadow-gold h-13 px-7 hover:scale-105 transition-transform"
+              className="bg-gold text-gold-foreground hover:bg-gold-light shadow-gold h-14 px-10 text-base hover:scale-105 transition-transform"
             >
               <Link to="/quote">
                 {t.hero.cta1}
-                <Arrow className="ms-2 w-4 h-4" />
+                <Arrow className="ms-2 w-5 h-5" />
               </Link>
             </Button>
             <Button
               asChild
               size="lg"
               variant="outline"
-              className="border-white/40 text-white bg-transparent hover:bg-white hover:text-primary h-13 px-7 hover:scale-105 transition-transform"
+              className="border-white/40 text-white bg-transparent hover:bg-white hover:text-primary h-14 px-10 text-base hover:scale-105 transition-transform"
             >
-              <a href="#contact">
-                <Phone className="me-2 w-4 h-4" />
+              <a
+                href={`https://wa.me/966532898887?text=${encodeURIComponent("السلام عليكم، أرغب في الاستفسار عن خدماتكم في المقاولات")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Phone className="me-2 w-5 h-5" />
                 {t.hero.cta2}
               </a>
             </Button>
