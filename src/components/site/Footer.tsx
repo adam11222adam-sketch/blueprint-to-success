@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useLang } from "@/i18n/LanguageContext";
 import logo from "@/assets/logo.png";
 
@@ -19,10 +20,10 @@ const Footer = () => {
         <div>
           <h4 className="font-display font-bold text-gold mb-4">{t.footer.links}</h4>
           <ul className="space-y-2 text-sm text-white/70">
-            <li><a href="#home" className="hover:text-gold transition-smooth">{t.nav.home}</a></li>
-            <li><a href="#projects" className="hover:text-gold transition-smooth">{t.nav.projects}</a></li>
-            <li><a href="#services" className="hover:text-gold transition-smooth">{t.nav.services}</a></li>
-            <li><a href="#contact" className="hover:text-gold transition-smooth">{t.nav.contact}</a></li>
+            <li><Link to="/#home" className="hover:text-gold transition-smooth">{t.nav.home}</Link></li>
+            <li><Link to="/#projects" className="hover:text-gold transition-smooth">{t.nav.projects}</Link></li>
+            <li><Link to="/#services" className="hover:text-gold transition-smooth">{t.nav.services}</Link></li>
+            <li><Link to="/#contact" className="hover:text-gold transition-smooth">{t.nav.contact}</Link></li>
           </ul>
         </div>
 
