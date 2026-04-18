@@ -7,7 +7,7 @@ const icons = [Clock, Award, ShieldCheck, Users, Briefcase, Settings];
 
 const WhyUs = () => {
   const { t } = useLang();
-  const [active, setActive] = useState<number>(2);
+  const [hovered, setHovered] = useState<number>(2);
 
   return (
     <section id="about" className="py-24 bg-background">
@@ -28,18 +28,18 @@ const WhyUs = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {t.why.items.map((p, i) => {
             const Icon = icons[i];
-            const isActive = active === i;
+            const isActive = hovered === i;
             return (
-              <motion.button
-                type="button"
-                onClick={() => setActive(i)}
+              <motion.div
                 key={p.title}
+                onMouseEnter={() => setHovered(i)}
+                onMouseLeave={() => setHovered(2)}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
                 whileHover={{ y: -4 }}
-                className={`text-start p-6 rounded-xl transition-smooth flex items-center gap-4 ${
+                className={`text-start p-6 rounded-xl transition-smooth flex items-center gap-4 cursor-pointer ${
                   isActive
                     ? "bg-primary text-primary-foreground shadow-elegant"
                     : "bg-secondary/50 hover:bg-secondary"
@@ -60,7 +60,7 @@ const WhyUs = () => {
                 >
                   <Icon className="w-6 h-6" />
                 </div>
-              </motion.button>
+              </motion.div>
             );
           })}
         </div>

@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 import { useLang } from "@/i18n/LanguageContext";
 import gov from "@/assets/project-government.jpg";
+import construction from "@/assets/project-construction.jpg";
 import com from "@/assets/project-commercial.jpg";
-import res from "@/assets/project-residential.jpg";
+import finishing from "@/assets/project-finishing.jpg";
 
-const imgs = [gov, com, res];
+const imgs = [gov, construction, com, finishing];
 
 const Projects = () => {
   const { t } = useLang();
@@ -25,7 +26,7 @@ const Projects = () => {
           <div className="w-24 h-1 bg-gradient-gold mx-auto" />
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {t.projects.items.map((p, i) => (
             <motion.article
               key={p.title}

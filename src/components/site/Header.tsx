@@ -20,16 +20,8 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full bg-background/90 backdrop-blur-md border-b border-border">
       <div className="container flex h-20 items-center justify-between">
-        <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="Modern Excellence Logo" className="h-12 w-12 object-contain" width={48} height={48} />
-          <div className="hidden sm:block leading-tight">
-            <div className="font-display font-bold text-primary text-base">
-              {lang === "ar" ? "جيل التميز الحديثة" : "Modern Excellence"}
-            </div>
-            <div className="text-[11px] text-muted-foreground">
-              {lang === "ar" ? "للمقاولات" : "Contracting"}
-            </div>
-          </div>
+        <Link to="/" className="flex items-center">
+          <img src={logo} alt="Modern Generation of Excellence Company" className="h-14 w-auto object-contain" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
@@ -47,7 +39,7 @@ const Header = () => {
             aria-label="Switch language"
           >
             <Globe className="w-4 h-4" />
-            {lang === "ar" ? "EN" : "ع"}
+            {lang === "ar" ? "AR-EN" : "EN-AR"}
           </button>
           <Button asChild className="hidden sm:inline-flex bg-gold text-gold-foreground hover:bg-gold-dark shadow-gold">
             <Link to="/quote">{t.nav.quote}</Link>
