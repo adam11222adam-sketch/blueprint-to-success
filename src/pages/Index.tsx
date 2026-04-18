@@ -1,16 +1,38 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Header from "@/components/site/Header";
+import Hero from "@/components/site/Hero";
+import Stats from "@/components/site/Stats";
+import Services from "@/components/site/Services";
+import Projects from "@/components/site/Projects";
+import WhyUs from "@/components/site/WhyUs";
+import Journey from "@/components/site/Journey";
+import CTA from "@/components/site/CTA";
+import Footer from "@/components/site/Footer";
+import WhatsAppButton from "@/components/site/WhatsAppButton";
+import { useEffect } from "react";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
+  useEffect(() => {
+    document.title = "جيل التميز الحديثة للمقاولات | مشاريع حكومية وتجارية";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "شركة جيل التميز الحديثة للمقاولات — تنفيذ المشاريع الحكومية والتجارية والسكنية بأعلى معايير الجودة في المملكة العربية السعودية.");
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main>
+        <Hero />
+        <Stats />
+        <Services />
+        <Projects />
+        <WhyUs />
+        <Journey />
+        <CTA />
+      </main>
+      <Footer />
+      <WhatsAppButton />
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
