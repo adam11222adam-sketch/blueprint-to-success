@@ -44,7 +44,7 @@ const Header = () => {
 
         <nav className="hidden lg:flex items-center gap-8">
           {links.map((l) => (
-            <a key={l.href} href={l.href} className="text-sm font-medium text-foreground hover:text-gold transition-smooth">
+            <a key={l.hash} href={`/#${l.hash}`} onClick={(e) => handleNavClick(e, l.hash)} className="text-sm font-medium text-foreground hover:text-gold transition-smooth cursor-pointer">
               {l.label}
             </a>
           ))}
@@ -76,7 +76,7 @@ const Header = () => {
         <div className="lg:hidden border-t border-border bg-background animate-fade-in">
           <nav className="container py-4 flex flex-col gap-4">
             {links.map((l) => (
-              <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="text-base font-medium py-2 text-foreground hover:text-gold">
+              <a key={l.hash} href={`/#${l.hash}`} onClick={(e) => handleNavClick(e, l.hash)} className="text-base font-medium py-2 text-foreground hover:text-gold cursor-pointer">
                 {l.label}
               </a>
             ))}
