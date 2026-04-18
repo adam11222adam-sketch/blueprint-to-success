@@ -8,10 +8,8 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 );
 
 const WhatsAppButton = () => {
-  const { lang } = useLang();
-  const message = lang === "ar"
-    ? "السلام عليكم، أرغب في الاستفسار عن خدماتكم في المقاولات"
-    : "Hello, I would like to inquire about your contracting services";
+  useLang();
+  const message = "السلام عليكم، أرغب في الاستفسار عن خدماتكم في المقاولات";
 
   return (
     <a
