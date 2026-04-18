@@ -35,16 +35,16 @@ const Footer = () => {
         <div>
           <h4 className="font-display font-bold text-gold mb-4">{t.footer.contact}</h4>
           <ul className="space-y-3 text-sm text-white/70">
-            <li className="flex items-center gap-2" dir="ltr">
+            <li className="flex items-center gap-2">
               <Phone className="w-4 h-4 text-gold shrink-0" />
-              <a href="tel:+966532898887" className="hover:text-gold transition-smooth">+966 53 289 8887</a>
+              <a href="tel:+966532898887" dir="ltr" className="hover:text-gold transition-smooth">+966 53 289 8887</a>
             </li>
             <li className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-gold shrink-0" />
               <a href="mailto:info@mgxsa.com" className="hover:text-gold transition-smooth">info@mgxsa.com</a>
             </li>
-            <li className="flex items-start gap-2">
-              <MapPin className="w-4 h-4 text-gold mt-0.5 shrink-0" />
+            <li className="flex items-center gap-2">
+              <MapPin className="w-4 h-4 text-gold shrink-0" />
               <span>{t.footer.address}</span>
             </li>
           </ul>

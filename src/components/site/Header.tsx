@@ -39,7 +39,7 @@ const Header = () => {
             aria-label="Switch language"
           >
             <Globe className="w-4 h-4" />
-            {lang === "ar" ? "AR-EN" : "EN-AR"}
+            {lang === "ar" ? "EN" : "AR"}
           </button>
           <Button asChild className="hidden sm:inline-flex bg-gold text-gold-foreground hover:bg-gold-dark shadow-gold">
             <Link to="/quote">{t.nav.quote}</Link>
