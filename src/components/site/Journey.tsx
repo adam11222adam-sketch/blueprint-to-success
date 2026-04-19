@@ -30,10 +30,10 @@ const Journey = () => {
         </motion.div>
 
         <div className="relative max-w-5xl mx-auto px-4">
-          {/* خط متصل أفقي بنقاط */}
-          <div className="hidden md:block absolute top-12 left-[8%] right-[8%] border-t-2 border-dashed border-gold/60" />
+          {/* خط متصل أفقي بنقاط - يظهر على الجوال والديسكتوب */}
+          <div className="absolute top-12 left-[12%] right-[12%] md:left-[8%] md:right-[8%] border-t-2 border-dashed border-gold/60" />
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-4 relative">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-4 md:gap-4 relative">
             {ordered.map((s, i) => {
               const Icon = iconsOrdered[i];
               return (
