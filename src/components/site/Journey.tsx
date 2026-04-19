@@ -6,10 +6,15 @@ const stepIcons = [Search, Ruler, HardHat, Key];
 
 const Journey = () => {
   const { t, dir } = useLang();
-  // الترتيب البصري: في الصورة 1 يمين -> 4 يسار (للعربي). نعكس عند الإنجليزية
-  const ordered = dir === "rtl" ? [...t.journey.steps].reverse() : t.journey.steps;
-  const numbers = dir === "rtl" ? [4, 3, 2, 1] : [1, 2, 3, 4];
-  const iconsOrdered = dir === "rtl" ? [...stepIcons].reverse() : stepIcons;
+  // على الديسكتوب: نعكس الترتيب البصري للعربية ليبدأ الرقم 1 من اليمين
+  const orderedDesktop = dir === "rtl" ? [...t.journey.steps].reverse() : t.journey.steps;
+  const numbersDesktop = dir === "rtl" ? [4, 3, 2, 1] : [1, 2, 3, 4];
+  const iconsDesktop = dir === "rtl" ? [...stepIcons].reverse() : stepIcons;
+
+  // على الموبايل: ترتيب طبيعي 1 -> 4 (عمودي)
+  const orderedMobile = t.journey.steps;
+  const numbersMobile = [1, 2, 3, 4];
+  const iconsMobile = stepIcons;
 
   return (
     <section className="py-24 bg-secondary relative overflow-hidden">
@@ -29,13 +34,46 @@ const Journey = () => {
           <p className="text-muted-foreground">{t.journey.sub}</p>
         </motion.div>
 
-        <div className="relative max-w-5xl mx-auto px-4">
-          {/* خط متصل أفقي بنقاط - يظهر على الجوال والديسكتوب */}
-          <div className="absolute top-12 left-[12%] right-[12%] md:left-[8%] md:right-[8%] border-t-2 border-dashed border-gold/60" />
+        {/* ===== موبايل: عمودي 1 -> 4 مع خط رأسي ===== */}
+        <div className="md:hidden relative max-w-sm mx-auto px-4">
+          {/* الخط الرأسي المتقطع */}
+          <div className="absolute top-12 bottom-12 left-1/2 -translate-x-1/2 border-l-2 border-dashed border-gold/60" />
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-4 md:gap-4 relative">
-            {ordered.map((s, i) => {
-              const Icon = iconsOrdered[i];
+          <div className="flex flex-col gap-10 relative">
+            {orderedMobile.map((s, i) => {
+              const Icon = iconsMobile[i];
+              return (
+                <motion.div
+                  key={s.title}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: i * 0.15 }}
+                  className="text-center relative"
+                >
+                  <div className="relative mx-auto w-24 h-24 mb-4">
+                    <div className="w-24 h-24 bg-background border-2 border-gold rounded-full flex items-center justify-center shadow-elegant">
+                      <Icon className="w-10 h-10 text-primary" strokeWidth={2} />
+                    </div>
+                    <div className="absolute -top-1 -end-1 w-8 h-8 bg-gold text-primary rounded-full flex items-center justify-center font-bold text-sm shadow-md">
+                      {numbersMobile[i]}
+                    </div>
+                  </div>
+                  <h3 className="font-display font-bold text-lg text-primary mb-1">{s.title}</h3>
+                  <p className="text-xs text-muted-foreground px-4">{s.desc}</p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* ===== ديسكتوب: أفقي مع خط ===== */}
+        <div className="hidden md:block relative max-w-5xl mx-auto px-4">
+          <div className="absolute top-12 left-[8%] right-[8%] border-t-2 border-dashed border-gold/60" />
+
+          <div className="grid grid-cols-4 gap-4 relative">
+            {orderedDesktop.map((s, i) => {
+              const Icon = iconsDesktop[i];
               return (
                 <motion.div
                   key={s.title}
@@ -46,13 +84,11 @@ const Journey = () => {
                   className="text-center relative"
                 >
                   <div className="relative mx-auto w-24 h-24 mb-5">
-                    {/* الدائرة البيضاء مع البوردر الذهبي */}
                     <div className="w-24 h-24 bg-background border-2 border-gold rounded-full flex items-center justify-center shadow-elegant">
                       <Icon className="w-10 h-10 text-primary" strokeWidth={2} />
                     </div>
-                    {/* الرقم البرتقالي */}
                     <div className="absolute -top-1 -end-1 w-8 h-8 bg-gold text-primary rounded-full flex items-center justify-center font-bold text-sm shadow-md">
-                      {numbers[i]}
+                      {numbersDesktop[i]}
                     </div>
                   </div>
                   <h3 className="font-display font-bold text-lg text-primary mb-1">{s.title}</h3>
