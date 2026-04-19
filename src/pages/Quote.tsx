@@ -8,6 +8,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import { Upload, Send } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
@@ -16,6 +18,7 @@ const Quote = () => {
   const { t, lang } = useLang();
   const [loading, setLoading] = useState(false);
   const [files, setFiles] = useState<File[]>([]);
+  const [consent, setConsent] = useState(false);
 
   useEffect(() => {
     document.title = lang === "ar"
@@ -25,6 +28,10 @@ const Quote = () => {
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!consent) {
+      toast.error(t.quote.consentRequired);
+      return;
+    }
     setLoading(true);
     const fd = new FormData(e.currentTarget);
     const data = {
@@ -160,10 +167,12 @@ const Quote = () => {
                   <Select name="type" required>
                     <SelectTrigger id="type" className="mt-2 h-11"><SelectValue placeholder={t.quote.typePlaceholder} /></SelectTrigger>
                     <SelectContent>
-                      <SelectItem value={t.quote.types.gov}>{t.quote.types.gov}</SelectItem>
                       <SelectItem value={t.quote.types.com}>{t.quote.types.com}</SelectItem>
                       <SelectItem value={t.quote.types.res}>{t.quote.types.res}</SelectItem>
                       <SelectItem value={t.quote.types.finish}>{t.quote.types.finish}</SelectItem>
+                      <SelectItem value={t.quote.types.pm}>{t.quote.types.pm}</SelectItem>
+                      <SelectItem value={t.quote.types.infra}>{t.quote.types.infra}</SelectItem>
+                      <SelectItem value={t.quote.types.maint}>{t.quote.types.maint}</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -203,9 +212,8 @@ const Quote = () => {
                   <SelectTrigger id="timeline" className="mt-2 h-11"><SelectValue placeholder={t.quote.timelinePlaceholder} /></SelectTrigger>
                   <SelectContent>
                     <SelectItem value={t.quote.timelines.now}>{t.quote.timelines.now}</SelectItem>
-                    <SelectItem value={t.quote.timelines["3m"]}>{t.quote.timelines["3m"]}</SelectItem>
-                    <SelectItem value={t.quote.timelines["6m"]}>{t.quote.timelines["6m"]}</SelectItem>
-                    <SelectItem value={t.quote.timelines["1y"]}>{t.quote.timelines["1y"]}</SelectItem>
+                    <SelectItem value={t.quote.timelines["1m"]}>{t.quote.timelines["1m"]}</SelectItem>
+                    <SelectItem value={t.quote.timelines["2m"]}>{t.quote.timelines["2m"]}</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -215,7 +223,24 @@ const Quote = () => {
                 <Textarea id="details" name="details" rows={4} maxLength={1000} placeholder={t.quote.detailsPlaceholder} className="mt-2" />
               </div>
 
-              <Button type="submit" size="lg" disabled={loading} className="w-full bg-gold text-gold-foreground hover:bg-gold-dark shadow-gold h-14 text-base hover:scale-[1.02] transition-transform">
+              <div className="flex items-start gap-3 p-4 bg-secondary/50 border border-border rounded-md">
+                <Checkbox
+                  id="consent"
+                  checked={consent}
+                  onCheckedChange={(c) => setConsent(c === true)}
+                  className="mt-1"
+                  required
+                />
+                <Label htmlFor="consent" className="text-sm text-muted-foreground leading-relaxed cursor-pointer font-normal">
+                  {t.quote.consent}{" "}
+                  <Link to="/privacy" target="_blank" className="text-gold font-bold hover:underline">
+                    {t.quote.consentLink}
+                  </Link>{" "}
+                  {t.quote.consentSuffix}
+                </Label>
+              </div>
+
+              <Button type="submit" size="lg" disabled={loading || !consent} className="w-full bg-gold text-gold-foreground hover:bg-gold-dark shadow-gold h-14 text-base hover:scale-[1.02] transition-transform disabled:opacity-50 disabled:hover:scale-100">
                 <Send className="me-2 w-5 h-5" />
                 {loading ? t.quote.sending : t.quote.submit}
               </Button>

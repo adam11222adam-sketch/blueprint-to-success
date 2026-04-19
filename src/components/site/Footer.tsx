@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLang } from "@/i18n/LanguageContext";
 import logo from "@/assets/logo.png";
@@ -43,6 +43,38 @@ const Footer = () => {
               <span>{t.footer.address}</span>
             </li>
           </ul>
+
+          <div className="mt-5 flex items-center gap-3">
+            <a
+              href="https://www.instagram.com/mgx.sa"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="w-10 h-10 rounded-full bg-white/10 hover:bg-gold hover:text-primary text-white flex items-center justify-center transition-smooth"
+            >
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a
+              href="https://x.com/mgx_sa"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="X (Twitter)"
+              className="w-10 h-10 rounded-full bg-white/10 hover:bg-gold hover:text-primary text-white flex items-center justify-center transition-smooth"
+            >
+              <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor" aria-hidden="true">
+                <path d="M18.244 2H21l-6.52 7.45L22 22h-6.79l-4.74-6.2L4.8 22H2.04l6.98-7.97L2 2h6.91l4.28 5.66L18.244 2Zm-1.19 18h1.66L7.06 4H5.31l11.745 16Z" />
+              </svg>
+            </a>
+            <a
+              href="https://www.linkedin.com/company/mgxsa"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="w-10 h-10 rounded-full bg-white/10 hover:bg-gold hover:text-primary text-white flex items-center justify-center transition-smooth"
+            >
+              <Linkedin className="w-5 h-5" />
+            </a>
+          </div>
         </div>
       </div>
 
