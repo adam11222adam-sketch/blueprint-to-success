@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, Phone } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/hero-bg-new.jpg";
 
 const Hero = () => {
   const { t, dir } = useLang();
@@ -13,7 +13,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative w-full min-h-[600px] lg:min-h-[640px] flex items-center overflow-hidden border-b-4 border-gold"
+      className="relative w-full min-h-[600px] lg:min-h-[640px] flex items-center lg:justify-center overflow-hidden border-b-4 border-gold"
     >
       {/* Background image */}
       <img
@@ -49,7 +49,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-2xl"
+          className="max-w-2xl lg:max-w-3xl lg:mx-auto lg:text-center"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -82,7 +82,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.6 }}
-            className="text-base md:text-lg text-white/85 mb-8 leading-relaxed max-w-xl"
+            className="text-base md:text-lg text-white/85 mb-8 leading-relaxed max-w-xl lg:mx-auto"
           >
             {t.hero.desc}
           </motion.p>
@@ -91,7 +91,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.6 }}
-            className="flex flex-wrap gap-4"
+            className="flex flex-wrap gap-4 lg:justify-center"
           >
             <Button
               asChild
