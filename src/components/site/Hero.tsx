@@ -64,7 +64,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.7 }}
-            className="font-display font-black text-3xl md:text-5xl lg:text-6xl text-white leading-[1.2] mb-3"
+            className="font-hero font-black text-3xl md:text-5xl lg:text-6xl text-white leading-[1.2] mb-3"
           >
             {t.hero.title1}
           </motion.h1>
@@ -73,7 +73,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.7 }}
-            className="font-display font-black text-2xl md:text-4xl lg:text-5xl text-gold leading-[1.2] mb-6"
+            className="font-hero font-black text-2xl md:text-4xl lg:text-5xl text-gold leading-[1.2] mb-6"
           >
             {t.hero.title2} {t.hero.title3}
           </motion.h2>
