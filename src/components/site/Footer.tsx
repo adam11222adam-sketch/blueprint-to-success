@@ -86,8 +86,13 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="container border-t border-white/10 pt-6 text-center text-sm text-white/50">
-        © {new Date().getFullYear()} {t.footer.company}. {t.footer.rights}
+      <div className="container border-t border-white/10 pt-6 text-center text-sm text-white/50 space-y-2">
+        <div>
+          <Link to="/privacy" className="hover:text-gold transition-smooth">
+            {lang === "ar" ? "بيان الخصوصية" : "Privacy Statement"}
+          </Link>
+        </div>
+        <div>© {new Date().getFullYear()} {t.footer.company}. {t.footer.rights}</div>
       </div>
     </footer>
   );
