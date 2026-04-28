@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, Phone } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import heroBg from "@/assets/hero-bg-new.jpg";
+import heroBgDesktop from "@/assets/hero-bg-desktop.png";
 
 const Hero = () => {
   const { t, dir } = useLang();
@@ -16,14 +17,17 @@ const Hero = () => {
       className="relative w-full min-h-[600px] lg:min-h-[640px] flex items-center lg:justify-center overflow-hidden border-b-4 border-gold"
     >
       {/* Background image */}
-      <img
-        src={heroBg}
-        alt=""
-        aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover"
-        width={1920}
-        height={1080}
-      />
+      <picture>
+        <source media="(min-width: 1000px)" srcSet={heroBgDesktop} />
+        <img
+          src={heroBg}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover"
+          width={1920}
+          height={1080}
+        />
+      </picture>
 
       {/* Dark gradient overlay */}
       <div
