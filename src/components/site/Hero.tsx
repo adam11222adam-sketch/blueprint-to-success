@@ -33,15 +33,6 @@ const Hero = () => {
         }}
       />
 
-      {/* Diagonal gold line pattern */}
-      <div
-        className="absolute inset-0 opacity-60 pointer-events-none"
-        style={{
-          backgroundImage:
-            "linear-gradient(135deg, transparent 45%, hsl(var(--gold) / 0.1) 45%, hsl(var(--gold) / 0.1) 46%, transparent 46%), linear-gradient(45deg, transparent 45%, hsl(var(--gold) / 0.1) 45%, hsl(var(--gold) / 0.1) 46%, transparent 46%)",
-          backgroundSize: "60px 60px",
-        }}
-      />
 
       {/* Content */}
       <div className="container relative z-10 py-20">
