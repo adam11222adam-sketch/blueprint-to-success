@@ -29,7 +29,7 @@ const Projects = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {t.projects.items.map((p, i) => (
             <motion.article
-              key={p.title}
+              key={i}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
