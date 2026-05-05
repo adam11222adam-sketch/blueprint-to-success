@@ -22,7 +22,10 @@ const WhyUs = () => {
           <h2 className="font-display font-bold text-3xl md:text-5xl text-primary mb-4">
             {t.why.title}
           </h2>
-          <div className="w-16 h-1 bg-gold mx-auto" />
+          <div className="w-16 h-1 bg-gold mx-auto mb-4" />
+          {(t.why as any).sub && (
+            <p className="text-lg text-muted-foreground">{(t.why as any).sub}</p>
+          )}
         </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
