@@ -67,6 +67,24 @@ const WhyUs = () => {
             );
           })}
         </div>
+
+        {(t as any).quality && (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6 }}
+            className="mt-16 max-w-3xl mx-auto text-center bg-secondary/50 rounded-2xl p-8 md:p-10 border border-border"
+          >
+            <h3 className="font-display font-bold text-2xl md:text-3xl text-primary mb-3">
+              {(t as any).quality.title}
+            </h3>
+            <div className="w-12 h-1 bg-gold mx-auto mb-4" />
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+              {(t as any).quality.desc}
+            </p>
+          </motion.div>
+        )}
       </div>
     </section>
   );
