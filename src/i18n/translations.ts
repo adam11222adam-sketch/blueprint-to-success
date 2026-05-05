@@ -40,10 +40,10 @@ export const translations = {
       kicker: "سجل الإنجاز",
       title: "مشاريعنا تتحدث عنا",
       items: [
-        { type: "", city: "", title: "مشروع إنشاء مبنى إداري" },
-        { type: "", city: "", title: "مشروع إنشاء مبنى إداري" },
-        { type: "", city: "", title: "مشروع إنشاء مبنى إداري" },
-        { type: "", city: "", title: "مشروع إنشاء مبنى إداري" },
+        { type: "", city: "", title: "مشروع مجمع سكني" },
+        { type: "", city: "", title: "مشروع تشطيبات داخلية فاخرة" },
+        { type: "", city: "", title: "مشروع قصر سكني" },
+        { type: "", city: "", title: "مشروع فيلا كلاسيكية" },
       ],
     },
     why: {
@@ -168,10 +168,10 @@ export const translations = {
       kicker: "Track Record",
       title: "Our projects speak for us",
       items: [
-        { type: "", city: "", title: "Administrative Building Project" },
-        { type: "", city: "", title: "Administrative Building Project" },
-        { type: "", city: "", title: "Administrative Building Project" },
-        { type: "", city: "", title: "Administrative Building Project" },
+        { type: "", city: "", title: "Residential Compound Project" },
+        { type: "", city: "", title: "Luxury Interior Finishing Project" },
+        { type: "", city: "", title: "Residential Palace Project" },
+        { type: "", city: "", title: "Classic Villa Project" },
       ],
     },
     why: {
