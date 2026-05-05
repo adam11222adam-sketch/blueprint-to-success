@@ -94,6 +94,8 @@ export default {
       fontFamily: {
         sans: ["Tajawal", "system-ui", "sans-serif"],
         display: ["Cairo", "Tajawal", "sans-serif"],
+        hero: ['"Thmanyah Serif Display"', '"Thmanyah Sans"', "Cairo", "serif"],
+        thmanyah: ['"Thmanyah Sans"', "Tajawal", "sans-serif"],
       },
     },
   },

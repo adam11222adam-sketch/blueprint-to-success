@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import { useLang } from "@/i18n/LanguageContext";
-import gov from "@/assets/project-government.jpg";
-import construction from "@/assets/project-construction.jpg";
-import com from "@/assets/project-commercial.jpg";
-import finishing from "@/assets/project-finishing.jpg";
+import p1 from "@/assets/project-1.jpg";
+import p2 from "@/assets/project-2.jpg";
+import p3 from "@/assets/project-3.jpg";
+import p4 from "@/assets/project-4.jpg";
 
-const imgs = [gov, construction, com, finishing];
+const imgs = [p1, p2, p3, p4];
 
 const Projects = () => {
   const { t } = useLang();
@@ -46,13 +46,15 @@ const Projects = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-smooth duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-smooth" />
-                <span className="absolute top-4 end-4 px-3 py-1 bg-gold text-gold-foreground text-xs font-bold rounded-sm">
-                  {p.type}
-                </span>
+                {p.type && (
+                  <span className="absolute top-4 end-4 px-3 py-1 bg-gold text-gold-foreground text-xs font-bold rounded-sm">
+                    {p.type}
+                  </span>
+                )}
               </div>
               <div className="p-6">
                 <h3 className="font-display font-bold text-xl text-primary mb-1">{p.title}</h3>
-                <p className="text-sm text-muted-foreground">{p.city}</p>
+                {p.city && <p className="text-sm text-muted-foreground">{p.city}</p>}
               </div>
             </motion.article>
           ))}

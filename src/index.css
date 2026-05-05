@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&family=Cairo:wght@600;700;800;900&family=Rubik:wght@400;500;600;700;800;900&family=Orbitron:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap');
 
+/* Thmanyah Fonts */
+@font-face { font-family: "Thmanyah Sans"; src: url("https://framerusercontent.com/assets/Lh8puxCFq405qBv7dKpg9NsHZNk.woff2") format("woff2"); font-display: swap; font-style: normal; font-weight: 300; }
+@font-face { font-family: "Thmanyah Sans"; src: url("https://framerusercontent.com/assets/x6EBzvXf1Fi35XhsRoHxePDVo.woff2") format("woff2"); font-display: swap; font-style: normal; font-weight: 400; }
+@font-face { font-family: "Thmanyah Sans"; src: url("https://framerusercontent.com/assets/oE98mOPE28KTzUeptOLRIaqW1I.woff2") format("woff2"); font-display: swap; font-style: normal; font-weight: 500; }
+@font-face { font-family: "Thmanyah Sans"; src: url("https://framerusercontent.com/assets/LZvgFRUsP7pGWYj3tKxMUrKuhSY.woff2") format("woff2"); font-display: swap; font-style: normal; font-weight: 700; }
+@font-face { font-family: "Thmanyah Sans"; src: url("https://framerusercontent.com/assets/ulQLGTktcl2Qq4AmD6RuVgELZKg.woff2") format("woff2"); font-display: swap; font-style: normal; font-weight: 900; }
+@font-face { font-family: "Thmanyah Serif Display"; src: url("https://framerusercontent.com/assets/zmxf3YlIwMxBTz61cviQtq5n3zU.woff2") format("woff2"); font-display: swap; font-style: normal; font-weight: 300; }
+@font-face { font-family: "Thmanyah Serif Display"; src: url("https://framerusercontent.com/assets/s1q2LvVNWBbqzMxMBxsexY73tE.woff2") format("woff2"); font-display: swap; font-style: normal; font-weight: 400; }
+@font-face { font-family: "Thmanyah Serif Display"; src: url("https://framerusercontent.com/assets/ahIxG21c1088n0jA0bPQBjKu6M.woff2") format("woff2"); font-display: swap; font-style: normal; font-weight: 500; }
+@font-face { font-family: "Thmanyah Serif Display"; src: url("https://framerusercontent.com/assets/AAY5hsAWwWmVC7qlScZUGjzCgE8.woff2") format("woff2"); font-display: swap; font-style: normal; font-weight: 700; }
+@font-face { font-family: "Thmanyah Serif Display"; src: url("https://framerusercontent.com/assets/a9r2dKNoQcqFiTkwxTUnXgAfjws.woff2") format("woff2"); font-display: swap; font-style: normal; font-weight: 900; }
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
