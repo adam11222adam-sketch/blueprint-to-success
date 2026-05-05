@@ -22,7 +22,10 @@ const WhyUs = () => {
           <h2 className="font-display font-bold text-3xl md:text-5xl text-primary mb-4">
             {t.why.title}
           </h2>
-          <div className="w-16 h-1 bg-gold mx-auto" />
+          <div className="w-16 h-1 bg-gold mx-auto mb-4" />
+          {(t.why as any).sub && (
+            <p className="text-lg text-muted-foreground">{(t.why as any).sub}</p>
+          )}
         </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -64,6 +67,24 @@ const WhyUs = () => {
             );
           })}
         </div>
+
+        {(t as any).quality && (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6 }}
+            className="mt-16 max-w-3xl mx-auto text-center bg-secondary/50 rounded-2xl p-8 md:p-10 border border-border"
+          >
+            <h3 className="font-display font-bold text-2xl md:text-3xl text-primary mb-3">
+              {(t as any).quality.title}
+            </h3>
+            <div className="w-12 h-1 bg-gold mx-auto mb-4" />
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+              {(t as any).quality.desc}
+            </p>
+          </motion.div>
+        )}
       </div>
     </section>
   );
